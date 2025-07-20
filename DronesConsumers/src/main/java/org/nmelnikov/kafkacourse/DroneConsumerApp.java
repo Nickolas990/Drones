@@ -1,6 +1,7 @@
 package org.nmelnikov.kafkacourse;
 
 import lombok.extern.slf4j.Slf4j;
+import org.nmelnikov.kafkacourse.config.KafkaConfig;
 import org.nmelnikov.kafkacourse.service.DroneConsumersService;
 import org.nmelnikov.kafkacourse.util.KafkaTopicUtils;
 
@@ -9,7 +10,9 @@ import java.util.Scanner;
 @Slf4j
 public class DroneConsumerApp {
     public static void main(String[] args) {
-        String kafkaServers = "localhost:9092,localhost:9093,localhost:9094";
+
+        KafkaConfig config = KafkaConfig.fromArgs(args);
+        String kafkaServers = String.join(",", config.getBootstrapServers());
         String metricsGroupId = "drone-metrics-alert-group";
         String reportGroupId = "delivery-report-group";
         double tempThreshold = 40.0;
