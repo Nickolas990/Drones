@@ -64,7 +64,7 @@ java -jar DronesConsumers-1.0-SNAPSHOT.jar --kafka_bootstrap_servers:localhost:9
 **Позиция / drone_positions** — JSON  
 { "drone": "drone-3", "lat": 55.2, "lon": 39.1 }
 
-**Доставка / drone_delivery_statuses** — JSON
+**Доставка / drone_delivery_statuses** — JSON  
 { "drone": "drone-3", "destination": "Казань" }
 
 **Log-файл алертов:**  
